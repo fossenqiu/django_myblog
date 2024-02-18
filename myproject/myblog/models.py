@@ -7,3 +7,5 @@ class MyBlogPost(models.Model):
     body = models.TextField()    ##博文正文数据较长文本，使用TextField类型
     timestamp = models.DateTimeField()
 
+    class Meta:
+        ordering = ('-timestamp',)

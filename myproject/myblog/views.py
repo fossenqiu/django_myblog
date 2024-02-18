@@ -6,8 +6,8 @@ from django.template import loader
 
 
 def archive(request):
-    posts = MyBlogPost.objects.all()
+
+    posts = MyBlogPost.objects.all()[:10]
     text = loader.get_template("archive.html")
     context = {'posts': posts}
     return HttpResponse(text.render(context))
-
