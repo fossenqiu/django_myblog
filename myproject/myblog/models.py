@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 # Create your models here.
 
@@ -9,3 +10,10 @@ class MyBlogPost(models.Model):
 
     class Meta:
         ordering = ('-timestamp',)
+
+
+class MyBlogPostForm(forms.ModelForm):
+
+    class Meta:
+        model = MyBlogPost
+        exclude = ('timestamp',)
